@@ -1,12 +1,9 @@
-package net.kuko.tutorialmod.datagen.loot;
+package net.kuko.openthings.datagen.loot;
 
-import net.kuko.tutorialmod.block.ModBlocks;
-import net.kuko.tutorialmod.item.ModItems;
+import net.kuko.openthings.block.ModBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -25,8 +22,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        this.dropSelf(ModBlocks.SAPPHIRE_BLOCK.get()); // <- Drops itself
-        this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get()); // <- Drops itself
+//        this.dropSelf(ModBlocks.SAPPHIRE_BLOCK.get()); // <- Drops itself
+//        this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get()); // <- Drops itself
 
 //        this.add(ModBlocks.SAPPHIRE_ORE.get(), // <- Creates copperLikeDrops. It drops Raw Sapphire.
 //                block -> createCopperLikeOreDrops(ModBlocks.SAPPHIRE_ORE.get(), ModItems.RAW_SAPPHIRE.get(), UniformGenerator.between(2f,6f)));

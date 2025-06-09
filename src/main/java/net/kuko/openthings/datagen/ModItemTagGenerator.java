@@ -1,6 +1,6 @@
-package net.kuko.tutorialmod.datagen;
+package net.kuko.openthings.datagen;
 
-import net.kuko.tutorialmod.TutorialMod;
+import net.kuko.openthings.OpenThingsMod;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
 public class ModItemTagGenerator extends ItemTagsProvider {
     public ModItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider,
                                CompletableFuture<TagLookup<Block>> pBlockTags, @Nullable ExistingFileHelper existingFileHelper) {
-        super(pOutput, pLookupProvider, pBlockTags, TutorialMod.MOD_ID, existingFileHelper);
+        super(pOutput, pLookupProvider, pBlockTags, OpenThingsMod.MOD_ID, existingFileHelper);
     }
 
     @Override

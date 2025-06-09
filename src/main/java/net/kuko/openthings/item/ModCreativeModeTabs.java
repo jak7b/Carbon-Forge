@@ -1,18 +1,14 @@
-package net.kuko.tutorialmod.item;
+package net.kuko.openthings.item;
 
-import net.kuko.tutorialmod.TutorialMod;
-import net.kuko.tutorialmod.block.ModBlocks;
+import net.kuko.openthings.OpenThingsMod;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TutorialMod.MOD_ID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, OpenThingsMod.MOD_ID);
 
 
 //
@@ -34,6 +30,6 @@ public class ModCreativeModeTabs {
 
     public static void register(IEventBus bus) {
         CREATIVE_MODE_TABS.register(bus);
-        TutorialMod.LOGGER.info("ModCreativeTabs registering for " + TutorialMod.MOD_ID);
+        OpenThingsMod.LOGGER.info("ModCreativeTabs registering for " + OpenThingsMod.MOD_ID);
     }
 }

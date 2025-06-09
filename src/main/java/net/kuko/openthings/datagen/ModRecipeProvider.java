@@ -1,8 +1,6 @@
-package net.kuko.tutorialmod.datagen;
+package net.kuko.openthings.datagen;
 
-import net.kuko.tutorialmod.TutorialMod;
-import net.kuko.tutorialmod.block.ModBlocks;
-import net.kuko.tutorialmod.item.ModItems;
+import net.kuko.openthings.OpenThingsMod;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -20,9 +18,9 @@ import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
-    private static final List<ItemLike> SAPPHIRE_SMELTABLES = List.of(
-            ModItems.RAW_SAPPHIRE.get()
-    );
+//    private static final List<ItemLike> SAPPHIRE_SMELTABLES = List.of(
+//            ModItems.RAW_SAPPHIRE.get()
+//    );
 
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
@@ -30,11 +28,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
-        oreSmelting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
-        oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
-
-        createTwoWayRecipes(pWriter, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get(), RecipeCategory.BUILDING_BLOCKS, TutorialMod.MOD_ID);
-        createTwoWayRecipes(pWriter, ModItems.RAW_SAPPHIRE.get(), ModBlocks.RAW_SAPPHIRE_BLOCK.get(), RecipeCategory.BUILDING_BLOCKS, TutorialMod.MOD_ID);
+//        oreSmelting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
+//        oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
+//
+//        createTwoWayRecipes(pWriter, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get(), RecipeCategory.BUILDING_BLOCKS, OpenThingsMod.MOD_ID);
+//        createTwoWayRecipes(pWriter, ModItems.RAW_SAPPHIRE.get(), ModBlocks.RAW_SAPPHIRE_BLOCK.get(), RecipeCategory.BUILDING_BLOCKS, OpenThingsMod.MOD_ID);
     }
 
     protected static void oreCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
@@ -43,7 +41,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer)
                     .group(pGroup)
                     .unlockedBy(getHasName(itemlike), has(itemlike))
-                    .save(pFinishedRecipeConsumer, ResourceLocation.tryBuild(TutorialMod.MOD_ID, recipeName));
+                    .save(pFinishedRecipeConsumer, ResourceLocation.tryBuild(OpenThingsMod.MOD_ID, recipeName));
         }
     }
 

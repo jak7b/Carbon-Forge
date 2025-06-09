@@ -1,15 +1,14 @@
-package net.kuko.tutorialmod.item;
+package net.kuko.openthings.item;
 
-import net.kuko.tutorialmod.TutorialMod;
+import net.kuko.openthings.OpenThingsMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(Registries.ITEM,TutorialMod.MOD_ID);
+            DeferredRegister.create(Registries.ITEM, OpenThingsMod.MOD_ID);
 //
 //
 //    public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
@@ -23,6 +22,6 @@ public class ModItems {
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus );
-        TutorialMod.LOGGER.info("ModItems registering for " + TutorialMod.MOD_ID);
+        OpenThingsMod.LOGGER.info("ModItems registering for " + OpenThingsMod.MOD_ID);
     }
 }
