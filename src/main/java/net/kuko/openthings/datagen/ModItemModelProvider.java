@@ -8,6 +8,7 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
+//import org.embeddedt.embeddium.compat.EmbeddiumCompat;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -25,7 +26,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
 
     }
-
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) { // <- Adds a simple item model into Assets/Namespace/Models/Item
         return withExistingParent(item.getId().getPath(),

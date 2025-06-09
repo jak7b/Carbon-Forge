@@ -5,20 +5,20 @@ import net.kuko.openthings.block.ModBlocks;
 import net.kuko.openthings.item.ModCreativeModeTabs;
 import net.kuko.openthings.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
+import static net.kuko.openthings.OpenThingsMod.MOD_ID;
+
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(OpenThingsMod.MOD_ID)
+@Mod(MOD_ID)
 public class OpenThingsMod {
     public static final String MOD_ID = "openthings";
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -30,9 +30,7 @@ public class OpenThingsMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
-
         modEventBus.addListener(this::commonSetup);
-
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -40,6 +38,7 @@ public class OpenThingsMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        System.out.println("Common setup logic.");
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -51,14 +50,6 @@ public class OpenThingsMod {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-
-    }
-
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-
-        }
+        System.out.println("Server setup logic.");
     }
 }
