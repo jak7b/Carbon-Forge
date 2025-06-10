@@ -21,6 +21,5 @@ build
 eclipse
 run
 python
-
 # Files from Forge MDK
 forge*changelog.txt
