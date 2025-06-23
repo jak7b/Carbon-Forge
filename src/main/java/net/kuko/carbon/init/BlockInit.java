@@ -1,7 +1,6 @@
-package net.kuko.openthings.block;
+package net.kuko.carbon.init;
 
-import net.kuko.openthings.OpenThingsMod;
-import net.kuko.openthings.item.ModItems;
+import net.kuko.carbon.CarbonMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -12,9 +11,9 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-public class ModBlocks {
+public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(Registries.BLOCK, OpenThingsMod.MOD_ID);
+            DeferredRegister.create(Registries.BLOCK, CarbonMod.MOD_ID);
 //
 //
 //    public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
@@ -48,12 +47,12 @@ public class ModBlocks {
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ModItems.ITEMS.register(name,
+        return ItemInit.ITEMS.register(name,
                 () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus bus) {
         BLOCKS.register(bus );
-        OpenThingsMod.LOGGER.info("ModBlocks registering for " + OpenThingsMod.MOD_ID);
+        CarbonMod.LOGGER.info("BlockInit registering for " + CarbonMod.MOD_ID);
     }
 }

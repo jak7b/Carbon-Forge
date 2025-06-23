@@ -1,7 +1,7 @@
-package net.kuko.openthings.datagen;
+package net.kuko.carbon.datagen;
 
 
-import net.kuko.openthings.OpenThingsMod;
+import net.kuko.carbon.CarbonMod;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.concurrent.CompletableFuture;
 
-@Mod.EventBusSubscriber(modid = OpenThingsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = CarbonMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
 
 
