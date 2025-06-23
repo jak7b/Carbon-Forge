@@ -1,14 +1,14 @@
-package net.kuko.openthings.item;
+package net.kuko.carbon.init;
 
-import net.kuko.openthings.OpenThingsMod;
+import net.kuko.carbon.CarbonMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 
-public class ModItems {
+public class ItemInit {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(Registries.ITEM, OpenThingsMod.MOD_ID);
+            DeferredRegister.create(Registries.ITEM, CarbonMod.MOD_ID);
 //
 //
 //    public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
@@ -22,6 +22,6 @@ public class ModItems {
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus );
-        OpenThingsMod.LOGGER.info("ModItems registering for " + OpenThingsMod.MOD_ID);
+        CarbonMod.LOGGER.info("ItemInit registering for " + CarbonMod.MOD_ID);
     }
 }

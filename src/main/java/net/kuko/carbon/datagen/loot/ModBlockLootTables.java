@@ -1,6 +1,6 @@
-package net.kuko.openthings.datagen.loot;
+package net.kuko.carbon.datagen.loot;
 
-import net.kuko.openthings.block.ModBlocks;
+import net.kuko.carbon.init.BlockInit;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -22,16 +22,16 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-//        this.dropSelf(ModBlocks.SAPPHIRE_BLOCK.get()); // <- Drops itself
-//        this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get()); // <- Drops itself
+//        this.dropSelf(BlockInit.SAPPHIRE_BLOCK.get()); // <- Drops itself
+//        this.dropSelf(BlockInit.RAW_SAPPHIRE_BLOCK.get()); // <- Drops itself
 
-//        this.add(ModBlocks.SAPPHIRE_ORE.get(), // <- Creates copperLikeDrops. It drops Raw Sapphire.
-//                block -> createCopperLikeOreDrops(ModBlocks.SAPPHIRE_ORE.get(), ModItems.RAW_SAPPHIRE.get(), UniformGenerator.between(2f,6f)));
+//        this.add(BlockInit.SAPPHIRE_ORE.get(), // <- Creates copperLikeDrops. It drops Raw Sapphire.
+//                block -> createCopperLikeOreDrops(BlockInit.SAPPHIRE_ORE.get(), ItemInit.RAW_SAPPHIRE.get(), UniformGenerator.between(2f,6f)));
     }
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 
 

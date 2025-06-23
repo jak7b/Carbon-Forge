@@ -1,6 +1,6 @@
-package net.kuko.openthings.datagen;
+package net.kuko.carbon.datagen;
 
-import net.kuko.openthings.OpenThingsMod;
+import net.kuko.carbon.CarbonMod;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -12,17 +12,17 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, OpenThingsMod.MOD_ID, existingFileHelper);
+        super(output, CarbonMod.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void registerModels() {
-//        simpleItem(ModItems.SAPPHIRE); /// <- Creates normale json for item model, nothing complex, I fink.
-//        simpleItem(ModItems.RAW_SAPPHIRE);
+//        simpleItem(ItemInit.SAPPHIRE); /// <- Creates normale json for item model, nothing complex, I fink.
+//        simpleItem(ItemInit.RAW_SAPPHIRE);
 //
-//        simpleItem(ModItems.METAL_DETECTOR);
-//        simpleItem(ModItems.PINE_CONE);
-//        simpleItem(ModItems.STRAWBERRY);
+//        simpleItem(ItemInit.METAL_DETECTOR);
+//        simpleItem(ItemInit.PINE_CONE);
+//        simpleItem(ItemInit.STRAWBERRY);
 
 
     }
@@ -30,6 +30,6 @@ public class ModItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) { // <- Adds a simple item model into Assets/Namespace/Models/Item
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.tryParse("item/generated")).texture("layer0", // <- originally: new ResourceLocation(...) but it got flagged for being outdated.
-                ResourceLocation.tryBuild(OpenThingsMod.MOD_ID, "item/" + item.getId().getPath())); // <- originally: new ResourceLocation(...) but it got flagged for being outdated.
+                ResourceLocation.tryBuild(CarbonMod.MOD_ID, "item/" + item.getId().getPath())); // <- originally: new ResourceLocation(...) but it got flagged for being outdated.
     }
 }

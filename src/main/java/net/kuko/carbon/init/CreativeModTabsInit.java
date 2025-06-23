@@ -1,35 +1,35 @@
-package net.kuko.openthings.item;
+package net.kuko.carbon.init;
 
-import net.kuko.openthings.OpenThingsMod;
+import net.kuko.carbon.CarbonMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 
-public class ModCreativeModeTabs {
+public class CreativeModTabsInit {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, OpenThingsMod.MOD_ID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CarbonMod.MOD_ID);
 
 
 //
 //
 //    public static final RegistryObject<CreativeModeTab> TUTORIAL_SAPPHIRE_TAB = CREATIVE_MODE_TABS.register("sapphire_tab",
 //            () -> CreativeModeTab.builder()
-//                    .icon(() -> new ItemStack(ModItems.SAPPHIRE.get()))
+//                    .icon(() -> new ItemStack(ItemInit.SAPPHIRE.get()))
 //                    .title(Component.translatable("creativemodtab.sapphire_tab"))
 //                    //.withTabsBefore()
 //                    .displayItems((pParameters, pOutput) ->  {
-//                        pOutput.accept(ModItems.RAW_SAPPHIRE.get());
-//                        pOutput.accept(ModItems.SAPPHIRE.get());
+//                        pOutput.accept(ItemInit.RAW_SAPPHIRE.get());
+//                        pOutput.accept(ItemInit.SAPPHIRE.get());
 //
-//                        pOutput.accept(ModBlocks.SAPPHIRE_BLOCK.get());
-//                        pOutput.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
+//                        pOutput.accept(BlockInit.SAPPHIRE_BLOCK.get());
+//                        pOutput.accept(BlockInit.RAW_SAPPHIRE_BLOCK.get());
 //                    })
 //                    .build());
 
 
     public static void register(IEventBus bus) {
         CREATIVE_MODE_TABS.register(bus);
-        OpenThingsMod.LOGGER.info("ModCreativeTabs registering for " + OpenThingsMod.MOD_ID);
+        CarbonMod.LOGGER.info("ModCreativeTabs registering for " + CarbonMod.MOD_ID);
     }
 }

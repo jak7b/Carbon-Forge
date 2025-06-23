@@ -1,6 +1,6 @@
-package net.kuko.openthings.datagen;
+package net.kuko.carbon.datagen;
 
-import net.kuko.openthings.datagen.loot.ModBlockLootTables;
+import net.kuko.carbon.datagen.loot.ModBlockLootTables;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
